@@ -1,4 +1,4 @@
-![alt text](https://github.com/Ebimsv/Facial_Age_estimation_PyTorch/blob/main/pics/Language-model.png)
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/Language-model.png)
 
 # About This Project
 This project is a step-by-step guide on building a language model using PyTorch, a powerful deep learning framework. It aims to provide a comprehensive understanding of the process involved in developing a language model and its applications.
