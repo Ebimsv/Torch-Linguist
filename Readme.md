@@ -1,7 +1,7 @@
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/Language-model.jpg)
 
 # About This Project
-This project is a step-by-step guide on building a language model using PyTorch, a powerful deep learning framework. It aims to provide a comprehensive understanding of the process involved in developing a language model and its applications.
+This project is a step-by-step guide on building a language model using PyTorch. It aims to provide a comprehensive understanding of the process involved in developing a language model and its applications.
 
 # Step 1: Accurate and concise definition of the problem
 Language modelling involves developing models that can effectively understand and generate human-like text based on input data, enabling tasks such as machine translation, text generation, and sentiment analysis.
@@ -62,6 +62,14 @@ These goals collectively aim to enhance human-machine interaction, automate lang
 N-gram language models are a traditional approach to language modeling that rely on statistical probabilities to predict the next word in a sequence of words. The "N" in N-gram refers to the number of previous words considered as context for prediction. 
 
 In an N-gram model, the probability of a word is estimated based on its occurrence in the training data relative to its preceding N-1 words. For example, in a trigram model (N=3), the probability of a word is determined by the two words that immediately precede it. This approach assumes that the probability of a word depends only on a fixed number of preceding words and does not consider long-range dependencies.
+
+Here are some examples of n-grams: 
+- Unigram: "This", "article", "is", "on", "NLP"
+- Bigram: "This article", "article is", "is on", "on NLP"
+- Trigram: "Please turn your", "turn your homework"
+- 4-gram: "What is N-gram method"
+
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/N-gram.png)
 
 Here are the advantages and disadvantages of N-gram language models:
 
@@ -162,11 +170,6 @@ Transformer models are a type of neural network architecture that has gained sig
 
 Despite these limitations, transformer models have revolutionized the field of natural language processing and language modeling. Their ability to capture long-range dependencies and contextual understanding has significantly advanced the state of the art in various language-related tasks, making them a prominent choice for many applications.
 </details>
-
-
-
-
-
 
 # Step 3: Choose the appropriate method
 The ResNet-50 model combined with regression is a powerful approach for facial age estimation. ResNet-50 is a deep convolutional neural network architecture that has proven to be highly effective in various computer vision tasks. By utilizing its depth and skip connections, ResNet-50 can effectively capture intricate facial features and patterns essential for age estimation. The regression component of the model enables it to directly predict the numerical age value, making it suitable for continuous age estimation rather than discrete age classification. This combination allows the model to learn complex relationships between facial attributes and age, providing accurate and precise age predictions. Overall, the ResNet-50 model with regression offers a robust and reliable solution for facial age estimation tasks.
