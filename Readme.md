@@ -1,4 +1,4 @@
-![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/Language-model.png)
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/Language-model.jpg)
 
 # About This Project
 This project is a step-by-step guide on building a language model using PyTorch, a powerful deep learning framework. It aims to provide a comprehensive understanding of the process involved in developing a language model and its applications.
@@ -65,25 +65,25 @@ In an N-gram model, the probability of a word is estimated based on its occurren
 
 Here are the advantages and disadvantages of N-gram language models:
 
-**Advantages**:
+- **Advantages**:
 
-  1. Simplicity: N-gram models are relatively simple to implement and understand. They have a straightforward probabilistic framework that can be easily computed and interpreted.
-  2. Efficiency: N-gram models are computationally efficient compared to more complex models. They require minimal memory and processing power, making them suitable for resource-constrained environments.
-  3. Robustness: N-gram models can handle out-of-vocabulary words and noisy data reasonably well. They can still provide reasonable predictions based on the available n-gram statistics, even if they encounter unseen words.
+    1. Simplicity: N-gram models are relatively simple to implement and understand. They have a straightforward probabilistic framework that can be easily computed and interpreted.
+    2. Efficiency: N-gram models are computationally efficient compared to more complex models. They require minimal memory and processing power, making them suitable for resource-constrained environments.
+    3. Robustness: N-gram models can handle out-of-vocabulary words and noisy data reasonably well. They can still provide reasonable predictions based on the available n-gram statistics, even if they encounter unseen words.
 
 **Disadvantages**:
 
-  - Lack of Contextual Understanding: N-gram models have limited contextual understanding since they consider only a fixed number of preceding words. They cannot capture long-range dependencies or understand the broader context of a sentence.
-  - Data Sparsity: N-gram models suffer from data sparsity issues, especially when the vocabulary size is large. As the n-gram order increases, the number of unique n-grams decreases exponentially, leading to sparse data and difficulties in accurately estimating probabilities.
-  - Limited Generalization: N-gram models often struggle with generalization to unseen or rare word combinations. They may assign low probabilities to valid but infrequent word sequences, leading to suboptimal predictions in such cases.
-  - Lack of Linguistic Understanding: N-gram models do not incorporate linguistic knowledge explicitly. They cannot capture syntactic or semantic relationships between words, limiting their ability to generate coherent and contextually appropriate language.
+  1. Lack of Contextual Understanding: N-gram models have limited contextual understanding since they consider only a fixed number of preceding words. They cannot capture long-range dependencies or understand the broader context of a sentence.
+  2. Data Sparsity: N-gram models suffer from data sparsity issues, especially when the vocabulary size is large. As the n-gram order increases, the number of unique n-grams decreases exponentially, leading to sparse data and difficulties in accurately estimating probabilities.
+  3. Limited Generalization: N-gram models often struggle with generalization to unseen or rare word combinations. They may assign low probabilities to valid but infrequent word sequences, leading to suboptimal predictions in such cases.
+  4. Lack of Linguistic Understanding: N-gram models do not incorporate linguistic knowledge explicitly. They cannot capture syntactic or semantic relationships between words, limiting their ability to generate coherent and contextually appropriate language.
 </details>
 
 <details>
   <summary><b>2. Recurrent Neural Network (RNN) models</b></summary><br/>
-Recurrent Neural Network (RNN) models, including **LSTM** (Long Short-Term Memory) and **GRU** (Gated Recurrent Unit), are all variations of neural network architectures designed to handle sequential data. Here's an overview of each model along with their advantages and disadvantages:
+Recurrent Neural Network (RNN) models, including LSTM (Long Short-Term Memory) and GRU (Gated Recurrent Unit), are all variations of neural network architectures designed to handle sequential data. Here's an overview of each model along with their advantages and disadvantages:
 
-1. Recurrent Neural Network (RNN):
+Recurrent Neural Network (RNN):
 RNNs are the fundamental type of neural network for sequential data processing. They have recurrent connections that allow information to be passed from one step to the next, enabling them to capture dependencies across time. However, traditional RNNs suffer from the vanishing/exploding gradient problem and struggle with long-term dependencies.
 
   Advantages of RNNs:
