@@ -1,55 +1,154 @@
-![alt text](https://github.com/Ebimsv/Facial_Age_estimation_PyTorch/blob/main/pics/Age-Estimation.png)
+![alt text](https://github.com/Ebimsv/Facial_Age_estimation_PyTorch/blob/main/pics/Language-model.png)
 
 # About This Project
-This repository provides a detailed, step-by-step implementation guide for facial age estimation using PyTorch, a popular deep learning framework. The goal of this project is to accurately estimate the age of individuals based on their facial appearance.
+This project is a step-by-step guide on building a language model using PyTorch, a powerful deep learning framework. It aims to provide a comprehensive understanding of the process involved in developing a language model and its applications.
 
 # Step 1: Accurate and concise definition of the problem
+Language modelling involves developing models that can effectively understand and generate human-like text based on input data, enabling tasks such as machine translation, text generation, and sentiment analysis.
+There are several common types of language modeling techniques, including:
 
+- **N-gram Language Models**: These models predict the next word based on the context of the previous N-1 words. 
+They are relatively simple but suffer from data sparsity issues.
+
+- **Neural Language Models**: These models leverage neural networks, such as recurrent neural networks (RNNs) or transformer models, to capture complex dependencies and contextual information in the text, resulting in improved performance.
+
+The effectiveness of a language model is typically evaluated using metrics like **cross-entropy** and **perplexity**, which measure the model's ability to predict the next word accurately. Several datasets, such as WikiText-2, WikiText-103, One Billion Word, Text8, and C4, among others, are commonly used for evaluating language models.
+**Note**: In this project, I use WikiText-2 
 
 ## The goal of solving a problem or challenge
-
+The goal of solving a problem or challenge in language modelling with AI is to develop models that can effectively understand, generate, and manipulate human language, enabling various applications such as natural language processing, machine translation, text summarization, sentiment analysis, and more. The aim is to enhance communication and interaction between humans and machines, enabling more efficient and intelligent language-based tasks.
 
 <details>
-<summary><b>1. </b></summary><br/>
+  <summary><b>1. Enhancing Natural Language Understanding</b></summary><br/>
+The goal is to develop language models that can comprehensively understand human language, including its semantics, context, and nuances.
 </details>
 
 <details>
-  <summary><b>2. </b></summary><br/>
+  <summary><b>2. Improving Language Generation</b></summary><br/>
+The objective is to create models that can generate human-like text, whether it's for creative writing, automated content generation, or chatbot interactions.
 </details>
 
 <details>
-<summary><b>3. </b></summary><br/>
+  <summary><b>3. Enabling Language Translation</b></summary><br/>
+The aim is to build models capable of accurately translating text from one language to another, facilitating cross-lingual communication and breaking down language barriers.
 </details>
 
 <details>
-<summary><b>4. </b></summary><br/>
+  <summary><b>4. Facilitating Sentiment Analysis</b></summary><br/>
+The goal is to develop models that can accurately analyze and interpret the sentiment expressed in text, helping in tasks such as social media monitoring, customer feedback analysis, and market research.
 </details>
 
 <details>
-<summary><b>5. </b></summary><br/>
+  <summary><b>5. Supporting Text Summarization</b></summary><br/>
+The objective is to create models that can generate concise summaries of longer texts, enabling users to quickly grasp the key points and main ideas without reading the entire document.
 </details>
 
 <details>
-<summary><b>6. </b></summary><br/>
+<summary><b>6. Assisting Language-based Search and Retrieval</b></summary><br/>
+The aim is to develop models that can effectively index, search, and retrieve relevant information based on natural language queries, improving information retrieval systems.
 </details>
 
 <details>
-<summary><b>7. </b></summary><br/>
+  <summary><b>7. Advancing Dialogue Systems</b></summary><br/>
+The goal is to build conversational agents or chatbots that can engage in human-like conversations, providing accurate and contextually relevant responses.
 </details>
 
+These goals collectively aim to enhance human-machine interaction, automate language-related tasks, and enable machines to understand and generate human language more effectively.
 
-# Step 2: Literature Review
+# Step 2: Advancements in Language Modelling: Different Types of Models for Language Modeling
 
 <details>
-<summary><b>1. </b></summary><br/>
+  <summary><b>1. N-gram Language Models</b></summary><br/>
+N-gram language models are a traditional approach to language modeling that rely on statistical probabilities to predict the next word in a sequence of words. The "N" in N-gram refers to the number of previous words considered as context for prediction. 
+
+In an N-gram model, the probability of a word is estimated based on its occurrence in the training data relative to its preceding N-1 words. For example, in a trigram model (N=3), the probability of a word is determined by the two words that immediately precede it. This approach assumes that the probability of a word depends only on a fixed number of preceding words and does not consider long-range dependencies.
+
+Here are the advantages and disadvantages of N-gram language models:
+
+**Advantages**:
+
+  1. Simplicity: N-gram models are relatively simple to implement and understand. They have a straightforward probabilistic framework that can be easily computed and interpreted.
+  2. Efficiency: N-gram models are computationally efficient compared to more complex models. They require minimal memory and processing power, making them suitable for resource-constrained environments.
+  3. Robustness: N-gram models can handle out-of-vocabulary words and noisy data reasonably well. They can still provide reasonable predictions based on the available n-gram statistics, even if they encounter unseen words.
+
+**Disadvantages**:
+
+  - Lack of Contextual Understanding: N-gram models have limited contextual understanding since they consider only a fixed number of preceding words. They cannot capture long-range dependencies or understand the broader context of a sentence.
+  - Data Sparsity: N-gram models suffer from data sparsity issues, especially when the vocabulary size is large. As the n-gram order increases, the number of unique n-grams decreases exponentially, leading to sparse data and difficulties in accurately estimating probabilities.
+  - Limited Generalization: N-gram models often struggle with generalization to unseen or rare word combinations. They may assign low probabilities to valid but infrequent word sequences, leading to suboptimal predictions in such cases.
+  - Lack of Linguistic Understanding: N-gram models do not incorporate linguistic knowledge explicitly. They cannot capture syntactic or semantic relationships between words, limiting their ability to generate coherent and contextually appropriate language.
 </details>
 
 <details>
-<summary><b>2. </b></summary><br/>
+  <summary><b>2. Recurrent Neural Network (RNN) models</b></summary><br/>
+Recurrent Neural Network (RNN) models, including **LSTM** (Long Short-Term Memory) and **GRU** (Gated Recurrent Unit), are all variations of neural network architectures designed to handle sequential data. Here's an overview of each model along with their advantages and disadvantages:
+
+1. Recurrent Neural Network (RNN):
+RNNs are the fundamental type of neural network for sequential data processing. They have recurrent connections that allow information to be passed from one step to the next, enabling them to capture dependencies across time. However, traditional RNNs suffer from the vanishing/exploding gradient problem and struggle with long-term dependencies.
+
+  Advantages of RNNs:
+  - Ability to capture sequential dependencies and context.
+  - Flexibility in handling variable-length input and output sequences.
+  - Suitable for tasks such as text generation, speech recognition, and language translation.
+
+  Disadvantages of RNNs:
+  - Difficulty in learning long-term dependencies due to the vanishing/exploding gradient problem.
+  - Limited contextual understanding of complex linguistic structures.
+  - Sequential nature limits parallelization, leading to slower processing times.
+
+2. Long Short-Term Memory (LSTM):
+LSTM is an extension of the RNN architecture that addresses the vanishing gradient problem. It introduces memory cells and gating mechanisms to selectively retain or forget information over time. LSTMs have proven effective in capturing long-term dependencies and maintaining contextual information.
+
+  Advantages of LSTMs:
+  - Efficiently capture and propagate information over long sequences.
+  - Mitigate the vanishing/exploding gradient problem.
+  - Improved ability to handle long-term dependencies.
+  - Better representation of sequential data and context.
+
+  Disadvantages of LSTMs:
+  - Increased computational complexity compared to traditional RNNs.
+  - Possibility of overfitting on small datasets.
+  - Still face challenges in understanding complex linguistic structures.
+
+3. Gated Recurrent Unit (GRU):
+GRU is another variation of the RNN architecture that aims to simplify the LSTM model. It combines the forget and input gates of the LSTM into a single update gate and merges the cell state and hidden state. GRUs have similar capabilities to LSTMs but with fewer parameters, making them computationally more efficient.
+
+  Advantages of GRUs:
+  - Simpler architecture compared to LSTMs, leading to reduced computational complexity.
+  - Effective in capturing long-term dependencies.
+  - Improved training speed and efficiency.
+  - Suitable for tasks with limited computational resources.
+
+  Disadvantages of GRUs:
+  - May have slightly reduced modeling capacity compared to LSTMs.
+  - Still face challenges in understanding complex linguistic structures.
+
+Overall, LSTM and GRU models overcome some of the limitations of traditional RNNs, particularly in capturing long-term dependencies. LSTMs excel in preserving contextual information, while GRUs offer a more computationally efficient alternative. The choice between LSTM and GRU depends on the specific requirements of the task and the available computational resources.
 </details>
 
 <details>
-<summary><b>3. </b></summary><br/>
+  <summary><b>3. Transformer models</b></summary><br/>
+Transformer models are a type of neural network architecture that has gained significant attention in the field of language modeling. Introduced by Vaswani et al. in 2017 [Google] (https://arxiv.org/pdf/1706.03762.pdf), transformers rely on self-attention mechanisms to capture global dependencies efficiently. They have achieved remarkable success in various natural language processing tasks, including language modeling, machine translation, and text generation.
+
+  Advantages of Transformer Models:
+    - Capturing Long-Range Dependencies: Transformers excel at capturing long-range dependencies in sequences by using self-attention mechanisms. This allows them to consider all positions in the input sequence when making predictions, enabling better understanding of context and improving the quality of generated text.
+
+    - Parallel Processing: Unlike recurrent models, transformers can process the input sequence in parallel, making them highly efficient and reducing training and inference times. This parallelization is possible due to the absence of sequential dependencies in the architecture.
+
+    - Scalability: Transformers are highly scalable and can handle large input sequences effectively. They can process sequences of arbitrary lengths without the need for truncation or padding, which is particularly advantageous for tasks involving long documents or sentences.
+
+    - Contextual Understanding: Transformers can capture rich contextual information by attending to relevant parts of the input sequence. This allows them to understand complex linguistic structures, semantic relationships, and dependencies between words, resulting in more coherent and contextually appropriate language generation.
+
+  Disadvantages of Transformer Models:
+    1. High Computational Requirements: Transformers typically require significant computational resources compared to simpler models like n-grams or traditional RNNs. Training large transformer models with extensive datasets can be computationally expensive and time-consuming.
+
+    2. Lack of Sequential Modeling: While transformers excel at capturing global dependencies, they may not be as effective at modeling strictly sequential data. In cases where the order of the input sequence is crucial, such as in tasks involving time-series data, traditional RNNs or convolutional neural networks (CNNs) may be more suitable.
+
+    3. Attention Mechanism Complexity: The self-attention mechanism in transformers introduces additional complexity to the model architecture. Understanding and implementing attention mechanisms correctly can be challenging, and tuning hyperparameters related to attention can be non-trivial.
+
+    4. Data Requirements: Transformers often require large amounts of training data to achieve optimal performance. Pretraining on large-scale corpora, such as in the case of pretrained transformer models like GPT and BERT, is common to leverage the power of transformers effectively.
+
+Despite these limitations, transformer models have revolutionized the field of natural language processing and language modeling. Their ability to capture long-range dependencies and contextual understanding has significantly advanced the state of the art in various language-related tasks, making them a prominent choice for many applications.
 </details>
 
 <details>
