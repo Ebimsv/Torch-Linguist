@@ -18,40 +18,26 @@ The effectiveness of a language model is typically evaluated using metrics like 
 ## The goal of solving a problem or challenge
 The goal of solving a problem or challenge in language modelling with AI is to develop models that can effectively understand, generate, and manipulate human language, enabling various applications such as natural language processing, machine translation, text summarization, sentiment analysis, and more. The aim is to enhance communication and interaction between humans and machines, enabling more efficient and intelligent language-based tasks.
 
-<details>
-  <summary><b>1. Enhancing Natural Language Understanding</b></summary><br/>
+- 1. Enhancing Natural Language Understanding
 The goal is to develop language models that can comprehensively understand human language, including its semantics, context, and nuances.
-</details>
 
-<details>
-  <summary><b>2. Improving Language Generation</b></summary><br/>
+- 2. Improving Language Generation
 The objective is to create models that can generate human-like text, whether it's for creative writing, automated content generation, or chatbot interactions.
-</details>
 
-<details>
-  <summary><b>3. Enabling Language Translation</b></summary><br/>
+- 3. Enabling Language Translation
 The aim is to build models capable of accurately translating text from one language to another, facilitating cross-lingual communication and breaking down language barriers.
-</details>
 
-<details>
-  <summary><b>4. Facilitating Sentiment Analysis</b></summary><br/>
+- 4. Facilitating Sentiment Analysis
 The goal is to develop models that can accurately analyze and interpret the sentiment expressed in text, helping in tasks such as social media monitoring, customer feedback analysis, and market research.
-</details>
 
-<details>
-  <summary><b>5. Supporting Text Summarization</b></summary><br/>
+- 5. Supporting Text Summarization
 The objective is to create models that can generate concise summaries of longer texts, enabling users to quickly grasp the key points and main ideas without reading the entire document.
-</details>
 
-<details>
-<summary><b>6. Assisting Language-based Search and Retrieval</b></summary><br/>
+- 6. Assisting Language-based Search and Retrieval
 The aim is to develop models that can effectively index, search, and retrieve relevant information based on natural language queries, improving information retrieval systems.
-</details>
 
-<details>
-  <summary><b>7. Advancing Dialogue Systems</b></summary><br/>
+- 7. Advancing Dialogue Systems
 The goal is to build conversational agents or chatbots that can engage in human-like conversations, providing accurate and contextually relevant responses.
-</details>
 
 These goals collectively aim to enhance human-machine interaction, automate language-related tasks, and enable machines to understand and generate human language more effectively.
 
@@ -67,7 +53,7 @@ Here are some examples of n-grams:
 - Unigram: "This", "article", "is", "on", "NLP"
 - Bigram: "This article", "article is", "is on", "on NLP"
 - Trigram: "Please turn your", "turn your homework"
-- 4-gram: "What is N-gram method"
+- 4-gram: "What is N-gram method"  
 
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/N-gram.png)
 
@@ -103,7 +89,7 @@ RNNs are the fundamental type of neural network for sequential data processing. 
 
   1. Difficulty in learning long-term dependencies due to the vanishing/exploding gradient problem.
   2. Limited contextual understanding of complex linguistic structures.
-  3. Sequential nature limits parallelization, leading to slower processing times.  
+  3. Sequential nature limits parallelization, leading to slower processing times.   
 
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/RNN.png)
 
@@ -157,9 +143,9 @@ For more information, please refer to the [Gated Recurrent Units (GRU)](https://
 
 <details>
   <summary><b>5. Transformer models</b></summary><br/>
-Transformer models are a type of neural network architecture that has gained significant attention in the field of language modeling. Introduced by Vaswani et al. in 2017 [Google] (https://arxiv.org/pdf/1706.03762.pdf), transformers rely on self-attention mechanisms to capture global dependencies efficiently. They have achieved remarkable success in various natural language processing tasks, including language modeling, machine translation, and text generation.
+Transformer models are a type of neural network architecture that has gained significant attention in the field of language modeling. Introduced by Vaswani et al. in 2017 [Google] (https://arxiv.org/pdf/1706.03762.pdf), transformers rely on self-attention mechanisms to capture global dependencies efficiently. They have achieved remarkable success in various natural language processing tasks, including language modeling, machine translation, and text generation.  
 
-  ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/transformer.png)
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/transformer.png)
 
 **Advantages**:  
 
