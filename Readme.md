@@ -159,7 +159,7 @@ For more information, please refer to the [Gated Recurrent Units (GRU)](https://
   <summary><b>5. Transformer models</b></summary><br/>
 Transformer models are a type of neural network architecture that has gained significant attention in the field of language modeling. Introduced by Vaswani et al. in 2017 [Google] (https://arxiv.org/pdf/1706.03762.pdf), transformers rely on self-attention mechanisms to capture global dependencies efficiently. They have achieved remarkable success in various natural language processing tasks, including language modeling, machine translation, and text generation.
 
-![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/transformer.png)
+  ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/transformer.png)
 
 **Advantages**:  
 
