@@ -192,6 +192,11 @@ With its simplicity and effectiveness, the Language Modeling with Embedding Laye
 
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/LM.png)
 
+The model we will construct corresponds to the diagram provided above, illustrating the three key components: an embedding layer, LSTM layers, and a classification layer. While the objectives of the LSTM and classification layers are already familiar to us, let's delve into the significance of the embedding layer. 
+
+The embedding layer plays a crucial role in the model by transforming each word, represented as an index, into a vector of E dimensions. This vector representation allows subsequent layers to learn and extract meaningful information from the input. It is worth noting that using indices or one-hot vectors to represent words can be inadequate as they assume no relationships between different words. 
+
+The mapping process carried out by the embedding layer is a learned procedure that takes place during training. Through this training phase, the model gains the ability to associate words with specific vectors in a way that captures semantic and syntactic relationships, thereby enhancing the model's understanding of the underlying language structure.
 # Step 4: Implementation of the selected method
 ## Dataset
 ### 1. EDA (Exploratory Data Analysis)
