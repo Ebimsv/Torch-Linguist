@@ -19,32 +19,25 @@ The effectiveness of a language model is typically evaluated using metrics like 
 The goal of solving a problem or challenge in language modelling with AI is to develop models that can effectively understand, generate, and manipulate human language, enabling various applications such as natural language processing, machine translation, text summarization, sentiment analysis, and more. The aim is to enhance communication and interaction between humans and machines, enabling more efficient and intelligent language-based tasks.
 
 - **Enhancing Natural Language Understanding**  
-
-The goal is to develop language models that can comprehensively understand human language, including its semantics, context, and nuances.
+  The goal is to develop language models that can comprehensively understand human language, including its semantics, context, and nuances.
 
 - **Improving Language Generation**  
-
-The objective is to create models that can generate human-like text, whether it's for creative writing, automated content generation, or chatbot interactions.
+  The objective is to create models that can generate human-like text, whether it's for creative writing, automated content generation, or chatbot interactions.
 
 - **Enabling Language Translation**  
-
-The aim is to build models capable of accurately translating text from one language to another, facilitating cross-lingual communication and breaking down language barriers.
+  The aim is to build models capable of accurately translating text from one language to another, facilitating cross-lingual communication and breaking down language barriers.
 
 - **Facilitating Sentiment Analysis**  
-
-The goal is to develop models that can accurately analyze and interpret the sentiment expressed in text, helping in tasks such as social media monitoring, customer feedback analysis, and market research.
+  The goal is to develop models that can accurately analyze and interpret the sentiment expressed in text, helping in tasks such as social media monitoring, customer feedback analysis, and market research.
 
 - **Supporting Text Summarization**  
-
-The objective is to create models that can generate concise summaries of longer texts, enabling users to quickly grasp the key points and main ideas without reading the entire document.
+  The objective is to create models that can generate concise summaries of longer texts, enabling users to quickly grasp the key points and main ideas without reading the entire document.
 
 - **Assisting Language-based Search and Retrieval**  
-
-The aim is to develop models that can effectively index, search, and retrieve relevant information based on natural language queries, improving information retrieval systems.
+  The aim is to develop models that can effectively index, search, and retrieve relevant information based on natural language queries, improving information retrieval systems.
 
 - **Advancing Dialogue Systems**  
-
-The goal is to build conversational agents or chatbots that can engage in human-like conversations, providing accurate and contextually relevant responses.
+  The goal is to build conversational agents or chatbots that can engage in human-like conversations, providing accurate and contextually relevant responses.
 
 These goals collectively aim to enhance human-machine interaction, automate language-related tasks, and enable machines to understand and generate human language more effectively.
 
