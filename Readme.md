@@ -103,7 +103,10 @@ RNNs are the fundamental type of neural network for sequential data processing. 
 
   1. Difficulty in learning long-term dependencies due to the vanishing/exploding gradient problem.
   2. Limited contextual understanding of complex linguistic structures.
-  3. Sequential nature limits parallelization, leading to slower processing times.
+  3. Sequential nature limits parallelization, leading to slower processing times.  
+
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/RNN.png)
+[Title](URL)
 </details>
 
 <details>
@@ -122,6 +125,8 @@ LSTM is an extension of the RNN architecture that addresses the vanishing gradie
   1. Increased computational complexity compared to traditional RNNs.
   2. Possibility of overfitting on small datasets.
   3. Still face challenges in understanding complex linguistic structures.
+
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/LSTM.png)
 </details>
 
 <details>
