@@ -190,7 +190,7 @@ Through this code, you can gain a deeper understanding of how embedding layers a
 With its simplicity and effectiveness, the Language Modeling with Embedding Layer and LSTM code is an essential resource for anyone interested in natural language processing and its applications.
 ## This is the diagram of proposed model  
 
-![alt text](https://github.com/Ebimsv/Facial_Age_estimation_PyTorch/blob/main/pics/LM.png)  
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/LM.png)
 
 # Step 4: Implementation of the selected method
 ## Dataset
