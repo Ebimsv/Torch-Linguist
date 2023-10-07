@@ -106,7 +106,9 @@ RNNs are the fundamental type of neural network for sequential data processing. 
   3. Sequential nature limits parallelization, leading to slower processing times.  
 
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/RNN.png)
-[Title](URL)
+
+For more information, please refer to the [Recurrent Neural Networks](https://d2l.ai/chapter_recurrent-neural-networks/index.html) chapter in the "Dive into Deep Learning" documentation.
+
 </details>
 
 <details>
@@ -127,6 +129,8 @@ LSTM is an extension of the RNN architecture that addresses the vanishing gradie
   3. Still face challenges in understanding complex linguistic structures.
 
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/LSTM.png)
+
+For more information, please refer to the [Long Short-Term Memory (LSTM)](https://d2l.ai/chapter_recurrent-modern/lstm.html) chapter in the "Dive into Deep Learning" documentation.
 </details>
 
 <details>
@@ -146,12 +150,16 @@ GRU is another variation of the RNN architecture that aims to simplify the LSTM 
   2. Still face challenges in understanding complex linguistic structures.
 
 Overall, LSTM and GRU models overcome some of the limitations of traditional RNNs, particularly in capturing long-term dependencies. LSTMs excel in preserving contextual information, while GRUs offer a more computationally efficient alternative. The choice between LSTM and GRU depends on the specific requirements of the task and the available computational resources.
+
+For more information, please refer to the [Gated Recurrent Units (GRU)](https://d2l.ai/chapter_recurrent-modern/gru.html) chapter in the "Dive into Deep Learning" documentation.
 </details>
 
 
 <details>
   <summary><b>5. Transformer models</b></summary><br/>
 Transformer models are a type of neural network architecture that has gained significant attention in the field of language modeling. Introduced by Vaswani et al. in 2017 [Google] (https://arxiv.org/pdf/1706.03762.pdf), transformers rely on self-attention mechanisms to capture global dependencies efficiently. They have achieved remarkable success in various natural language processing tasks, including language modeling, machine translation, and text generation.
+
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/transformer.png)
 
 **Advantages**:  
 
@@ -173,7 +181,10 @@ Transformer models are a type of neural network architecture that has gained sig
 
   4. Data Requirements: Transformers often require large amounts of training data to achieve optimal performance. Pretraining on large-scale corpora, such as in the case of pretrained transformer models like GPT and BERT, is common to leverage the power of transformers effectively.
 
+For more information, please refer to the [The Transformer Architecture](https://d2l.ai/chapter_attention-mechanisms-and-transformers/transformer.html) chapter in the "Dive into Deep Learning" documentation.
+
 Despite these limitations, transformer models have revolutionized the field of natural language processing and language modeling. Their ability to capture long-range dependencies and contextual understanding has significantly advanced the state of the art in various language-related tasks, making them a prominent choice for many applications.
+
 </details>
 
 # Step 3: Choose the appropriate method
