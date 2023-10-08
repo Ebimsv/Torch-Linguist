@@ -208,6 +208,7 @@ To download a dataset using Torchtext, you can use the `torchtext.datasets` modu
 Here's an example of how to download the Wikitext-2 dataset using Torchtext:  
 
 ```
+import torchtext
 from torchtext.datasets import WikiText2  
 data_path = "path/to/save/dataset"
 train_dataset, valid_dataset, test_dataset = WikiText2(root=data_path) 
