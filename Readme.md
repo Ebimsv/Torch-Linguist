@@ -199,6 +199,20 @@ The embedding layer plays a crucial role in the model by transforming each word,
 The mapping process carried out by the embedding layer is a learned procedure that takes place during training. Through this training phase, the model gains the ability to associate words with specific vectors in a way that captures semantic and syntactic relationships, thereby enhancing the model's understanding of the underlying language structure.
 # Step 4: Implementation of the selected method
 ## Dataset
+The WkiText-103 dataset, developed by Salesforce, contains over 100 million tokens extracted from the set of verified Good and Featured articles on Wikipedia. It has 267,340 unique tokens that appear at least 3 times in the dataset. Since it has full-length Wikipedia articles, the dataset is well-suited for tasks that can benefit of long term dependencies, such as language modeling.
+
+The **WikiText-2** dataset is a small version of the **WikiText-103** dataset as it contains only 2 million tokens. This small dataset is suitable for testing your language model.
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/wikitext-2.png)
+
+To download a dataset using Torchtext, you can use the `torchtext.datasets` module in Python. 
+Here's an example of how to download the Wikitext-2 dataset using Torchtext:  
+
+```
+from torchtext.datasets import WikiText2  
+data_path = "path/to/save/dataset"
+train_dataset, valid_dataset, test_dataset = WikiText2(root=data_path) 
+```
+
 ### 1. EDA (Exploratory Data Analysis)
 
 This repository contains code for performing exploratory data analysis on the UTK dataset, which consists of images categorized by age, gender, and ethnicity.
