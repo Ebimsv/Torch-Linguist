@@ -140,9 +140,15 @@ Overall, LSTM and GRU models overcome some of the limitations of traditional RNN
 For more information, please refer to the [Gated Recurrent Units (GRU)](https://d2l.ai/chapter_recurrent-modern/gru.html) chapter in the "Dive into Deep Learning" documentation.
 </details>
 
+<details>
+  <summary><b>5. comparing RNN, LSTM, and GRU</b></summary><br/>
+RNNs are designed to capture dependencies between previous and current inputs, making them suitable for tasks such as language modeling and speech recognition. However, they suffer from the vanishing gradient problem, limiting their ability to capture long-term dependencies. To address this issue, LSTM networks were introduced. LSTM networks use memory cells and gates to selectively retain or discard information, allowing them to remember important information over longer sequences. GRU networks are a simplified version of LSTMs that use fewer gates, resulting in a more streamlined architecture. While LSTMs and GRUs both alleviate the vanishing gradient problem, GRUs are computationally more efficient due to their simpler structure. The choice between LSTM and GRU depends on the specific task and data characteristics.  
+
+![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/RNN_LSTM_GRU.png)
+</details>
 
 <details>
-  <summary><b>5. Transformer models</b></summary><br/>
+  <summary><b>6. Transformer models</b></summary><br/>
 Transformer models are a type of neural network architecture that has gained significant attention in the field of language modeling. Introduced by Vaswani et al. in 2017 [Google] (https://arxiv.org/pdf/1706.03762.pdf), transformers rely on self-attention mechanisms to capture global dependencies efficiently. They have achieved remarkable success in various natural language processing tasks, including language modeling, machine translation, and text generation.  
 
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/transformer.png)
