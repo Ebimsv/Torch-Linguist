@@ -207,13 +207,13 @@ Two commonly used metrics for evaluating language models are **cross-entropy** a
 
 Cross-entropy is a measure of how well the language model predicts the next word in a sequence. It quantifies the difference between the predicted probability distribution and the true distribution of the next word. Lower cross-entropy values indicate better predictions. The formula for cross-entropy is:
 
-Cross-entropy = -Σ log(p(x))
+**Cross-entropy = -Σ log(p(x))**
 
 where p(x) is the predicted probability of the true next word x.
 
 Perplexity is derived from cross-entropy and provides an alternative way to measure the performance of a language model. It represents the average uncertainty or surprise of the model when predicting the next word. Perplexity is calculated as the exponentiation of the cross-entropy value. Lower perplexity values indicate better language models. The formula for perplexity is:
 
-Perplexity = exp(Cross-entropy)
+**Perplexity = exp(Cross-entropy)**
 
 A lower perplexity value indicates that the model is more confident and accurate in predicting the next word.
 
