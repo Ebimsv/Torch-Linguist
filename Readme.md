@@ -12,7 +12,7 @@ They are relatively simple but suffer from data sparsity issues.
 
 - **Neural Language Models**: These models leverage neural networks, such as recurrent neural networks (RNNs) or transformer models, to capture complex dependencies and contextual information in the text, resulting in improved performance.
 
-The effectiveness of a language model is typically evaluated using metrics like **cross-entropy** and **perplexity**, which measure the model's ability to predict the next word accurately. Several datasets, such as WikiText-2, WikiText-103, One Billion Word, Text8, and C4, among others, are commonly used for evaluating language models.
+The effectiveness of a language model is typically evaluated using metrics like **cross-entropy** and **perplexity**, which measure the model's ability to predict the next word accurately (I will cover them in **Step 2**). Several datasets, such as WikiText-2, WikiText-103, One Billion Word, Text8, and C4, among others, are commonly used for evaluating language models.
 **Note**: In this project, I use WikiText-2 
 
 ## The goal of solving a problem or challenge
@@ -41,7 +41,29 @@ The goal of solving a problem or challenge in language modelling with AI is to d
 
 These goals collectively aim to enhance human-machine interaction, automate language-related tasks, and enable machines to understand and generate human language more effectively.
 
-# Step 2: Advancements in Language Modelling: Different Types of Models for Language Modeling
+# Step 2: Advancements in Language Modelling and different approaches: 
+
+## Different Language model training approaches:
+Language model training approaches can be broadly categorized into three main types: **causal language models**, **masked language models**, and **sequence-to-sequence models**. Each approach has its own characteristics and training methodologies. Let's explore each of them in more detail:
+
+1. **Causal Language Models (e.g., GPT-3)**:
+   Causal language models, also known as **autoregressive models**, generate text by predicting the next word in a sequence given the previous words. These models are trained to maximize the likelihood of the next word using techniques like the transformer architecture. During training, the input to the model is the entire sequence up to a given token, and the model's goal is to predict the next token. This type of model is useful for tasks such as **text generation**, **completion**, and **summarization**.
+
+2. **Masked Language Models (e.g., BERT)**:
+   Masked language models (MLMs) are designed to learn contextual representations of words by predicting **masked or missing words** in a sentence. During training, a portion of the input sequence is randomly masked, and the model is trained to predict the original words given the context. MLMs use bidirectional architectures like transformers to capture the dependencies between the masked words and the rest of the sentence. These models excel in tasks such as **text classification**, **named entity recognition**, and **question answering**.
+
+3. **Sequence-to-Sequence Models (e.g., T5)**:
+   Sequence-to-sequence (Seq2Seq) models are trained to map an input sequence to an output sequence. They consist of **an encoder** that processes the input sequence and **a decoder** that generates the output sequence. Seq2Seq models are widely used in tasks such as **machine translation**, **text summarization**, and **dialogue systems**. They can be trained using techniques like recurrent neural networks (RNNs) or transformers. The training objective is to maximize the likelihood of generating the correct output sequence given the input.
+
+It's important to note that these training approaches are **not mutually exclusive**, and researchers often combine them or employ variations to achieve specific goals. For example, models like T5 combine the autoregressive and masked language model training objectives to learn a diverse range of tasks.
+
+Each training approach has its own strengths and weaknesses, and the choice of the model depends on the specific task requirements and available training data. Researchers and practitioners often experiment with different architectures and training methodologies to improve the performance of language models and adapt them to various natural language processing tasks.  
+
+For more information, please refer to the [A Guide to Language Model Training Approaches](https://medium.com/@tom_21755/understanding-causal-llms-masked-llm-s-and-seq2seq-a-guide-to-language-model-training-d4457bbd07fa#:~:text=CLM%20models%20focus%20on%20predicting,good%20for%20tasks%20requiring%20the) chapter in the "Dive into Deep Learning" documentation.
+
+## Different Types of Models for Language Modeling  
+
+Language modeling involves building models that can generate or predict sequences of words or characters. Here are some different types of models commonly used for language modeling:
 
 <details>
   <summary><b>1. N-gram Language Models</b></summary><br/>
@@ -178,6 +200,42 @@ For more information, please refer to the [The Transformer Architecture](https:/
 Despite these limitations, transformer models have revolutionized the field of natural language processing and language modeling. Their ability to capture long-range dependencies and contextual understanding has significantly advanced the state of the art in various language-related tasks, making them a prominent choice for many applications.
 
 </details>
+
+## Evaluating language model
+
+Two commonly used metrics for evaluating language models are **cross-entropy** and **perplexity**.
+
+Cross-entropy is a measure of how well the language model predicts the next word in a sequence. It quantifies the difference between the predicted probability distribution and the true distribution of the next word. Lower cross-entropy values indicate better predictions. The formula for cross-entropy is:
+
+Cross-entropy = -Σ log(p(x))
+
+where p(x) is the predicted probability of the true next word x.
+
+Perplexity is derived from cross-entropy and provides an alternative way to measure the performance of a language model. It represents the average uncertainty or surprise of the model when predicting the next word. Perplexity is calculated as the exponentiation of the cross-entropy value. Lower perplexity values indicate better language models. The formula for perplexity is:
+
+Perplexity = exp(Cross-entropy)
+
+A lower perplexity value indicates that the model is more confident and accurate in predicting the next word.
+
+Let's illustrate these metrics with an example. Suppose we have a language model trained on a large corpus of text, and we want to evaluate its performance using cross-entropy and perplexity. We provide a test set of sentences, and for each sentence, we calculate the cross-entropy and perplexity as follows:
+
+1. Sentence: "The cat is sitting on the"
+
+   The language model predicts the next word as "mat" with a probability of 0.8, "chair" with a probability of 0.1, and "table" with a probability of 0.1.
+   
+   Cross-entropy = -log(0.8) = 0.223
+   Perplexity = exp(0.223) = 1.250
+
+2. Sentence: "I want to go to the"
+
+   The language model predicts the next word as "park" with a probability of 0.6, "store" with a probability of 0.3, and "school" with a probability of 0.1.
+   
+   Cross-entropy = -log(0.6) = 0.511
+   Perplexity = exp(0.511) = 1.668
+
+By calculating the cross-entropy and perplexity for multiple sentences in the test set and taking their average, we can obtain a quantitative measure of the language model's performance.
+
+In summary, cross-entropy and perplexity are widely used metrics to evaluate the effectiveness of language models. These metrics provide insights into the model's ability to predict the next word accurately, with lower values indicating better performance.
 
 # Step 3: Choose the appropriate method: Language Modeling with Embedding Layer and LSTM
 
