@@ -217,6 +217,46 @@ Perplexity is derived from cross-entropy and provides an alternative way to meas
 
 A lower perplexity value indicates that the model is more confident and accurate in predicting the next word.
 
+Here's a simple example of how to use the Perplexity metric from torchmetrics:
+```
+import torch
+import torchmetrics
+
+# Define some dummy data
+logits = torch.tensor([[0.2, 0.5, 0.3], [0.1, 0.2, 0.7]])
+targets = torch.tensor([1, 2])
+
+# Calculate the loss using CrossEntropyLoss since it's often used with perplexity
+loss_function = torch.nn.CrossEntropyLoss(reduction='none')
+losses = loss_function(logits, targets)
+
+# Initialize the Perplexity metric
+perplexity = torchmetrics.Perplexity()
+
+# Update the state with losses and compute the perplexity
+perplexity.update(losses)
+final_perplexity = perplexity.compute()
+print(f"Perplexity: {final_perplexity.item()}")
+
+```
+
+Here's a simple example of how to use the Perplexity metric from torchmetrics:
+```
+import torch
+import torch.nn as nn
+
+# Define some dummy data
+# logits are raw outputs from a model and typically haven't had a softmax applied
+logits = torch.tensor([[0.2, 0.5, 0.3], [0.1, 0.2, 0.7]])
+targets = torch.tensor([1, 2])  # ground truth labels
+
+# Initialize the CrossEntropyLoss
+loss_function = nn.CrossEntropyLoss()
+
+# Calculate the loss
+loss = loss_function(logits, targets)
+print(f"Cross Entropy Loss: {loss.item()}")
+```
 Let's illustrate these metrics with an example. Suppose we have a language model trained on a large corpus of text, and we want to evaluate its performance using cross-entropy and perplexity. We provide a test set of sentences, and for each sentence, we calculate the cross-entropy and perplexity as follows:
 
 1. **Sentence: "The cat is sitting on the"**
