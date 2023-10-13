@@ -115,7 +115,26 @@ RNNs are the fundamental type of neural network for sequential data processing. 
 
 ![alt text](https://github.com/Ebimsv/Torch-Linguist/blob/main/pics/RNN.png)
 
-For more information, please refer to the [Recurrent Neural Networks](https://d2l.ai/chapter_recurrent-neural-networks/index.html) chapter in the "Dive into Deep Learning" documentation.
+PyTorch code snippet for defining a basic RNN in PyTorch:
+```
+import torch
+import torch.nn as nn
+
+input_size = 100
+hidden_size = 64
+num_layers = 2
+batch_size = 1
+seq_length = 10
+
+rnn = nn.RNN(input_size, hidden_size, num_layers)
+input_data = torch.randn(seq_length, batch_size, input_size)
+h0 = torch.zeros(num_layers, batch_size, hidden_size)
+
+output, hn = rnn(input_data, h0)
+```
+In the case of a basic RNN, the output shape of the RNN layer will be `[seq_length, batch_size, hidden_size]`. This means that for each input in the sequence, there will be a corresponding output hidden state. In the provided example, the output shape is `torch.Size([10, 1, 64])`, indicating that the RNN was applied to a sequence of length 10, with a batch size of 1, and a hidden state size of 64.
+
+Regarding the `hn` (hidden state) tensor, its shape is `torch.Size([2, 1, 64])`. The first dimension, 2, represents the number of layers in the RNN. In this case, `num_layers` was set to 2, so there are 2 layers. The second dimension, 1, corresponds to the batch size, which is 1 in the given example. Finally, the last dimension, 64, represents the size of the hidden state. Thus, `hn` contains the final hidden state for each layer of the RNN after processing the entire input sequence.
 
 </details>
 
@@ -143,6 +162,30 @@ LSTM is an extension of the RNN architecture that addresses the vanishing gradie
 - **Update Gate**: Calculates new candidate values for cell state.
 - **Output Gate**: Controls output flow, determines output selection.
 
+PyTorch code snippet for defining a basic LSTM in PyTorch:
+```
+import torch
+import torch.nn as nn
+
+input_size = 100
+hidden_size = 64
+num_layers = 2
+batch_size = 1
+seq_length = 10
+
+lstm = nn.LSTM(input_size, hidden_size, num_layers)
+input_data = torch.randn(seq_length, batch_size, input_size)
+h0 = torch.zeros(num_layers, batch_size, hidden_size)
+c0 = torch.zeros(num_layers, batch_size, hidden_size)
+
+output, (hn, cn) = lstm(input_data, (h0, c0))
+```
+The output shape of the LSTM layer will also be `[seq_length, batch_size, hidden_size]`. This means that for each input in the sequence, there will be a corresponding output hidden state. In the provided example, the output shape is `torch.Size([10, 1, 64])`, indicating that the LSTM was applied to a sequence of length 10, with a batch size of 1, and a hidden state size of 64.
+
+Now, let's discuss the `hn` (hidden state) tensor. Its shape is `torch.Size([2, 1, 64])`. The first dimension, 2, represents the number of layers in the LSTM. In this case, the `num_layers` argument was set to 2, so there are 2 layers in the LSTM model. The second dimension, 1, corresponds to the batch size, which is 1 in the given example. Finally, the last dimension, 64, represents the size of the hidden state.
+
+Therefore, the `hn` tensor contains the final hidden state for each layer of the LSTM after processing the entire input sequence, following the LSTM's ability to retain long-term dependencies and mitigate the vanishing gradient problem.
+
 For more information, please refer to the [Long Short-Term Memory (LSTM)](https://d2l.ai/chapter_recurrent-modern/lstm.html) chapter in the "Dive into Deep Learning" documentation.
 </details>
 
@@ -163,6 +206,28 @@ GRU is another variation of the RNN architecture that aims to simplify the LSTM 
   2. Still face challenges in understanding complex linguistic structures.
 
 Overall, LSTM and GRU models overcome some of the limitations of traditional RNNs, particularly in capturing long-term dependencies. LSTMs excel in preserving contextual information, while GRUs offer a more computationally efficient alternative. The choice between LSTM and GRU depends on the specific requirements of the task and the available computational resources.
+
+```
+import torch
+import torch.nn as nn
+
+input_size = 100
+hidden_size = 64
+num_layers = 2
+batch_size = 1
+seq_length = 10
+
+gru = nn.GRU(input_size, hidden_size, num_layers)
+input_data = torch.randn(seq_length, batch_size, input_size)
+h0 = torch.zeros(num_layers, batch_size, hidden_size)
+
+output, hn = gru(input_data, h0)
+```
+The output shape of the GRU layer will also be `[seq_length, batch_size, hidden_size]`. This means that for each input in the sequence, there will be a corresponding output hidden state. In the provided example, the output shape is `torch.Size([10, 1, 64])`, indicating that the GRU was applied to a sequence of length 10, with a batch size of 1, and a hidden state size of 64.
+
+Now, let's discuss the `hn` (hidden state) tensor. Its shape is `torch.Size([2, 1, 64])`. The first dimension, 2, represents the number of layers in the GRU. In this case, the `num_layers` argument was set to 2, so there are 2 layers in the GRU model. The second dimension, 1, corresponds to the batch size, which is 1 in the given example. Finally, the last dimension, 64, represents the size of the hidden state.
+
+Therefore, the `hn` tensor contains the final hidden state for each layer of the GRU after processing the entire input sequence, following the GRU's ability to capture and retain information over long sequences while mitigating the vanishing gradient problem.
 
 For more information, please refer to the [Gated Recurrent Units (GRU)](https://d2l.ai/chapter_recurrent-modern/gru.html) chapter in the "Dive into Deep Learning" documentation.
 </details>
@@ -330,7 +395,8 @@ This repository contains code for performing exploratory data analysis on the UT
 6. [Create Violin Plots and Box Plots for Age (Separated by Ethnicity)](#create-violin-plots-and-box-plots-for-age-separated-by-ethnicity)
 
 <details>
-  <summary><b>1. Download WikiText-2 dataset</b></summary><br/>
+  <summary><b>1. Download WikiText-2 dataset</b></summary><br
+
 To download a dataset using Torchtext, you can use the `torchtext.datasets` module in Python. 
 Here's an example of how to download the Wikitext-2 dataset using Torchtext:  
 
@@ -344,9 +410,11 @@ train_dataset, valid_dataset, test_dataset = WikiText2(root=data_path)
 
 <details>
   <summary><b>2. Tokenize data and build a vocabulary</b></summary><br/>
-To build a vocabulary and save it in PyTorch using `build_vocab_from_iterator` from `torchtext.vocab` for the Wikitext-2 dataset while using a tokenizer from `torchtext.data.utils.get_tokenizer`, you can follow these steps: `torch.nn`
+
+To build a vocabulary and save it in PyTorch using `build_vocab_from_iterator` from `torchtext.vocab` for the Wikitext-2 dataset while using a tokenizer from `torchtext.data.utils.get_tokenizer`, you can follow these steps:
 
 Import the necessary modules:
+
 ```
 import torch
 import torchtext
@@ -356,11 +424,13 @@ from torchtext.data.utils import get_tokenizer
 ```
 
 Load the Wikitext-2 dataset:
+
 ```
 train_dataset, valid_dataset, test_dataset = Wikitext2()
 ```
 
 Define a tokenizer using get_tokenizer:
+
 ```
 tokenizer = get_tokenizer('basic_english')
 ```
@@ -374,18 +444,20 @@ def yield_tokens(dataset):
 ```
 
 Build the vocabulary using build_vocab_from_iterator:
+
 ```
 vocab = build_vocab_from_iterator(yield_tokens(train_dataset))
 ```
 
 Save the vocabulary to a file:
+
 ```
 torch.save(vocab, 'wikitext2_vocab.pt')
 ```
 </details>
 
 <details>
-<summary><b>Plot Histograms for Age, Gender, and Ethnicity</b></summary><br/>
+<summary><b>EDA(Exploratory data analysis)</b></summary><br/>
 These histograms can provide insights into the dataset's composition and help identify any imbalances or patterns. 
 
    - Histogram for Age:  
