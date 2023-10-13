@@ -344,7 +344,7 @@ train_dataset, valid_dataset, test_dataset = WikiText2(root=data_path)
 
 <details>
   <summary><b>2. Tokenize data and build a vocabulary</b></summary><br/>
-To build a vocabulary and save it in PyTorch using build_vocab_from_iterator from torchtext.vocab for the Wikitext-2 dataset while using a tokenizer from torchtext.data.utils.get_tokenizer, you can follow these steps:
+To build a vocabulary and save it in PyTorch using `build_vocab_from_iterator` from `torchtext.vocab` for the Wikitext-2 dataset while using a tokenizer from `torchtext.data.utils.get_tokenizer`, you can follow these steps:
 
 Import the necessary modules:
 ```
