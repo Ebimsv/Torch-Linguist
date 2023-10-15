@@ -93,6 +93,35 @@ Here are the advantages and disadvantages of N-gram language models:
   2. Data Sparsity: N-gram models suffer from data sparsity issues, especially when the vocabulary size is large. As the n-gram order increases, the number of unique n-grams decreases exponentially, leading to sparse data and difficulties in accurately estimating probabilities.
   3. Limited Generalization: N-gram models often struggle with generalization to unseen or rare word combinations. They may assign low probabilities to valid but infrequent word sequences, leading to suboptimal predictions in such cases.
   4. Lack of Linguistic Understanding: N-gram models do not incorporate linguistic knowledge explicitly. They cannot capture syntactic or semantic relationships between words, limiting their ability to generate coherent and contextually appropriate language.
+  Here's an example of using n-grams in Torchtext:
+  
+  ```
+import torch
+from torchtext.data.utils import get_tokenizer
+from torchtext.data.utils import ngrams_iterator
+
+# Define token list
+token_list = ['I', 'love', 'to', 'code', 'in', 'Python']
+
+# Define the n-gram size
+n = 3
+
+# Create a tokenizer
+tokenizer = get_tokenizer('basic_english')
+
+# Tokenize the input text
+tokens = tokenizer(' '.join(token_list))
+
+# Generate the n-grams using the ngrams_iterator
+ngrams = list(ngrams_iterator(tokens, n))
+
+# Convert the n-grams back to strings
+ngram_strings = [' '.join(ngram) for ngram in ngrams]
+
+print(ngram_strings)
+
+['i', 'love', 'to', 'code', 'in', 'python', 'i love', 'love to', 'to code', 'code in', 'in python', 'i love to', 'love to code', 'to code in', 'code in python']
+```
 </details>
 
 <details>
