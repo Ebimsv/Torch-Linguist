@@ -92,7 +92,8 @@ Here are the advantages and disadvantages of N-gram language models:
   1. Lack of Contextual Understanding: N-gram models have limited contextual understanding since they consider only a fixed number of preceding words. They cannot capture long-range dependencies or understand the broader context of a sentence.
   2. Data Sparsity: N-gram models suffer from data sparsity issues, especially when the vocabulary size is large. As the n-gram order increases, the number of unique n-grams decreases exponentially, leading to sparse data and difficulties in accurately estimating probabilities.
   3. Limited Generalization: N-gram models often struggle with generalization to unseen or rare word combinations. They may assign low probabilities to valid but infrequent word sequences, leading to suboptimal predictions in such cases.
-  4. Lack of Linguistic Understanding: N-gram models do not incorporate linguistic knowledge explicitly. They cannot capture syntactic or semantic relationships between words, limiting their ability to generate coherent and contextually appropriate language.
+  4. Lack of Linguistic Understanding: N-gram models do not incorporate linguistic knowledge explicitly. They cannot capture syntactic or semantic relationships between words, limiting their ability to generate coherent and contextually appropriate language.  
+  
   Here's an example of using n-grams in Torchtext:
   
 ```
