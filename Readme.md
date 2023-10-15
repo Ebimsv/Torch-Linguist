@@ -95,33 +95,23 @@ Here are the advantages and disadvantages of N-gram language models:
   4. Lack of Linguistic Understanding: N-gram models do not incorporate linguistic knowledge explicitly. They cannot capture syntactic or semantic relationships between words, limiting their ability to generate coherent and contextually appropriate language.
   Here's an example of using n-grams in Torchtext:
   
-  ```
-import torch
-from torchtext.data.utils import get_tokenizer
+```
+import torchtext
+from torchtext.data import get_tokenizer
 from torchtext.data.utils import ngrams_iterator
 
-# Define token list
-token_list = ['I', 'love', 'to', 'code', 'in', 'Python']
+tokenizer = get_tokenizer("basic_english")
+# Create a tokenizer object using the "basic_english" tokenizer provided by torchtext
+# This tokenizer splits the input text into a list of tokens
 
-# Define the n-gram size
-n = 3
+tokens = tokenizer("I love to code in Python")
+# The result is a list of tokens, where each token represents a word or a punctuation mark
 
-# Create a tokenizer
-tokenizer = get_tokenizer('basic_english')
-
-# Tokenize the input text
-tokens = tokenizer(' '.join(token_list))
-
-# Generate the n-grams using the ngrams_iterator
-ngrams = list(ngrams_iterator(tokens, n))
-
-# Convert the n-grams back to strings
-ngram_strings = [' '.join(ngram) for ngram in ngrams]
-
-print(ngram_strings)
+print(list(ngrams_iterator(tokens, 3)))
 
 ['i', 'love', 'to', 'code', 'in', 'python', 'i love', 'love to', 'to code', 'code in', 'in python', 'i love to', 'love to code', 'to code in', 'code in python']
 ```
+
 </details>
 
 <details>
