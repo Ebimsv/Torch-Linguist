@@ -117,8 +117,10 @@ PyTorch code snippet for defining a basic RNN in PyTorch:
 import torch
 import torch.nn as nn
 
-# Create an instance of the RNN module
 rnn = nn.RNN(input_size=10, hidden_size=20, num_layers=2)
+# input_size  – The number of expected features in the input x
+# hidden_size – The number of features in the hidden state h
+# num_layers  – Number of recurrent layers. E.g., setting num_layers=2 would mean stacking two RNNs together
 
 # Create a randomly initialized input tensor
 input = torch.randn(5, 3, 10)  # (sequence length=5, batch size=3, input size=10)
