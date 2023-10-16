@@ -131,11 +131,12 @@ h0 = torch.randn(2, 3, 20)  # (num_layers=2, batch size=3, hidden size=20)
 # Apply the RNN module to the input tensor and initial hidden state tensor
 output, hn = rnn(input, h0)
 
-print(output.shape)  # (sequence length=5, batch size=3, hidden size=20) 
-# torch.Size([5, 3, 20])
+print(output.shape)  # torch.Size([5, 3, 20])
+# (sequence length=5, batch size=3, hidden size=20)   
 
-print(hn.shape)  # (num_layers=2, batch size=3, hidden size=20)
-# torch.Size([2, 3, 20])
+
+print(hn.shape)  # torch.Size([2, 3, 20]) 
+# (num_layers=2, batch size=3, hidden size=20)
 ```
 </details>
 
