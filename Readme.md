@@ -117,22 +117,24 @@ PyTorch code snippet for defining a basic RNN in PyTorch:
 import torch
 import torch.nn as nn
 
-input_size = 100
-hidden_size = 64
-num_layers = 2
-batch_size = 1
-seq_length = 10
+# Create an instance of the RNN module
+rnn = nn.RNN(input_size=10, hidden_size=20, num_layers=2)
 
-rnn = nn.RNN(input_size, hidden_size, num_layers)
-input_data = torch.randn(seq_length, batch_size, input_size)
-h0 = torch.zeros(num_layers, batch_size, hidden_size)
+# Create a randomly initialized input tensor
+input = torch.randn(5, 3, 10)  # (sequence length=5, batch size=3, input size=10)
 
-output, hn = rnn(input_data, h0)
+# Create a randomly initialized hidden state tensor
+h0 = torch.randn(2, 3, 20)  # (num_layers=2, batch size=3, hidden size=20)
+
+# Apply the RNN module to the input tensor and initial hidden state tensor
+output, hn = rnn(input, h0)
+
+# Print the shape of the output tensor
+print(output.shape)  # (sequence length=5, batch size=3, hidden size=20)
+
+# Print the shape of the final hidden state tensor
+print(hn.shape)  # (num_layers=2, batch size=3, hidden size=20)
 ```
-In the case of a basic RNN, the output shape of the RNN layer will be `[seq_length, batch_size, hidden_size]`. This means that for each input in the sequence, there will be a corresponding output hidden state. In the provided example, the output shape is `torch.Size([10, 1, 64])`, indicating that the RNN was applied to a sequence of length 10, with a batch size of 1, and a hidden state size of 64.
-
-Regarding the `hn` (hidden state) tensor, its shape is `torch.Size([2, 1, 64])`. The first dimension, 2, represents the number of layers in the RNN. In this case, `num_layers` was set to 2, so there are 2 layers. The second dimension, 1, corresponds to the batch size, which is 1 in the given example. Finally, the last dimension, 64, represents the size of the hidden state. Thus, `hn` contains the final hidden state for each layer of the RNN after processing the entire input sequence.
-
 </details>
 
 <details>
