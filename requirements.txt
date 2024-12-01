@@ -3,3 +3,5 @@ torch==2.0.1+cu118
 torchtext==0.15.2+cpu  
 tqdm==4.66.1  
 portalocker>=2.0.0
+huggingface_hub==0.25.2 
+torchmetrics
